@@ -30,9 +30,9 @@
 
 [在线预览](https://react-antd-admin.lhh.now.sh/)
 
-![demo](./public/static/md_link/lL9rJU.png)
+![demo](https://s2.ax1x.com/2020/01/14/lL9rJU.png)
 
-![demo](./public/static/md_link/lvekAU.gif)
+![demo](https://s2.ax1x.com/2020/01/14/lvekAU.gif)
 
 ## 📁 目录
 
