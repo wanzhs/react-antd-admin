@@ -1,7 +1,7 @@
 ;(function(self, factory) {
   self.g_config = factory()
 })(global || window || {}, function() {
-  const drakColor = '#001529'
+  const darkColor = '#001529'
   const isProd = process.env.NODE_ENV === 'production'
   const visitPath = '/'
   // const visitPath = 'http://localhost:5000/build/'
@@ -13,8 +13,8 @@
     skin: {
       '@primary-color': '#1890ff',
       '@layout-header-background': '#fff',
-      '@layout-sider-background': drakColor,
-      '@menu-dark-bg': drakColor
+      '@layout-sider-background': darkColor,
+      '@menu-dark-bg': darkColor
     }
   }
   return {
