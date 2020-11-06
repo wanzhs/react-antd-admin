@@ -73,11 +73,7 @@ const customConfig = () => config => {
   if (isProd) {
     // config.devtool = false
   } else {
-    config.plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerPort: 5555
-      })
-    )
+
   }
   //ref:https://github.com/ant-design/ant-design/issues/12011
   const alias = config.resolve.alias || {}

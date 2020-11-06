@@ -18,46 +18,6 @@ const {capitalize, natural} = Random;
 
 export default [
     {
-        url: url + '/' + api.loginAccount,
-        type: 'post',
-        response: config => {
-            return {
-                code: 200,
-                msg: '成功',
-                success: true,
-                result: {
-                    userName: "admin",
-                    userId: "3f4FA265-9b35-eBAD-1396-7E6A9B2fF2B6",
-                    authority: "admin"
-                }
-            }
-        },
-    }, {
-        url: url + '/' + api.verifyIsLogin,
-        type: 'get',
-        response: config => {
-            if ((Math.random() % 2) === 0) {
-                return {
-                    code: 401,
-                    msg: '未登录',
-                    success: false,
-                    result: {}
-                }
-            } else {
-                return {
-                    code: 200,
-                    msg: '成功',
-                    success: true,
-                    result: {
-                        authority: 'admin',
-                        userId: "3f4FA265-9b35-eBAD-1396-7E6A9B2fF2B6",
-                        userName: 'admin',
-                    }
-                }
-            }
-        },
-    },
-    {
         url: url + '/' + api.countDiffTypeQuantity,
         type: 'get',
         response: config => {
