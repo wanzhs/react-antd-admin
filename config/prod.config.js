@@ -20,7 +20,7 @@ window.g_config = (function() {
     apiRoot: 'http://localhost:9999/',
     // apiRoot: 'https://api.lhh.now.sh/',
     themes: themes,
-    defaultTheme: 'purple',
+    defaultTheme: 'dark',
     isProd: true,
     publicPath: publicPath,
     loginAddress: ''.concat(publicPath, '#/user/login')

@@ -5,6 +5,7 @@ export interface IPageQuery {
 }
 
 export interface IChargingOrderQuery {
+    carNo?: string,
     chargingBeginDt?: any,
     chargingEndDt?: any,
     chargingType?: any,
@@ -12,7 +13,8 @@ export interface IChargingOrderQuery {
     stationId?: any,
     userName?: any,
     userTel?: any,
-    orderStates?: any,
+    vinCode?: any,
+    orderStates?: any[]
 }
 
 export interface IStationDetail {
@@ -50,4 +52,14 @@ export interface IStationDetail {
     photoAddress?: string | string[];
     insertDt?: string;
     updateDt?: string;
+}
+
+/**
+ * 充电订单累计信息
+ * */
+export interface IChargingOrderTotalDetail {
+    totalFare?: number;
+    totalEnergy?: number;
+    carCount?: number;
+    chargingAllTime?: number;
 }

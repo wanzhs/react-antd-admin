@@ -26,7 +26,7 @@
     // apiRoot: 'http://lgh.github.io:9999/',
     // apiRoot: 'https://api.lhh.now.sh/',
     themes,
-    defaultTheme: 'purple',
+    defaultTheme: 'dark',
     isProd,
     publicPath,
     loginAddress: `${isProd ? '#' : ''}/user/login`
