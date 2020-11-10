@@ -22,7 +22,7 @@
     enName: 'react-antd-admin',
     logo: publicPath + 'static/logo.svg',
     // apiRoot: 'http://localhost:9999/api',
-    apiRoot: 'http://192.168.2.221:8021',
+    apiRoot: 'http://localhost:8012',
     // apiRoot: 'http://lgh.github.io:9999/',
     // apiRoot: 'https://api.lhh.now.sh/',
     themes,

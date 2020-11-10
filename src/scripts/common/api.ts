@@ -1,8 +1,8 @@
 export default {
-    loginAccount: 'users/login/account', //用户登陆
-    logoutAccount: 'users/logout/account', //用户登出
-    registerAccount: 'users/register/account', //用户注册
-    verifyIsLogin: 'users/verifyIsLogin', //验证用户登陆
+    loginAccount: 'account/login/account', //用户登陆
+    logoutAccount: 'account/logout/account', //用户登出
+    registerAccount: 'account/register/account', //用户注册
+    verifyIsLogin: 'account/verifyIsLogin', //验证用户登陆
 
     getGeoWorld: 'geo/world', //获取地图画布
 

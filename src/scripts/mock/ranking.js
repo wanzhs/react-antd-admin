@@ -58,7 +58,7 @@ export default [
     },
     {
         // type 0=>月 1=>年
-        // url:RegExp('http://192.168.2.221:8021/count/performance/[0-1]{1}'),
+        // url:RegExp('http://localhost:8021/count/performance/[0-1]{1}'),
         url: RegExp((`${url}/${api.countPerformance}/[0-1]{1}`)),
         type: 'get',
         response: config => {
