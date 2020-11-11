@@ -455,4 +455,23 @@ export const clearLoginInfo = () => {
     Rstore.clearAll()
     sessionStore.remove(userCacheAccountKey);
     goJumpLoginPage()
-}
+};
+
+
+export const urlFormat = (url: string, params?: { [key: string]: any }): string => {
+    let newUrl = url;
+    if (params) {
+        const keys = Object.keys(params);
+        if (keys.length > 0) {
+            newUrl += '?';
+            keys.forEach((value, index, array) => {
+                // @ts-ignore
+                newUrl = `${newUrl}${value}=${params[value]}`;
+                if (index !== array.length - 1) {
+                    newUrl += '&';
+                }
+            });
+        }
+    }
+    return newUrl;
+};

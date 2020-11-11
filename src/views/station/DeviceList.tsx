@@ -1,6 +1,7 @@
 import React from "react";
 import {Table} from "antd";
 import {StationService} from "@views/station/station.service";
+import Images from "@components/common/Images";
 
 interface IState {
     dataList: any[];
@@ -8,6 +9,7 @@ interface IState {
     tableLoading: boolean;
     currentIndex: number;
     currentRow: any;
+    currentSubRow: any;
 }
 
 interface IProp {
@@ -21,6 +23,7 @@ class DeviceList extends React.Component<IProp, IState> {
         tableLoading: false,
         currentIndex: -1,
         currentRow: {},
+        currentSubRow: {},
     };
     columns: any = [
         {
@@ -107,6 +110,22 @@ class DeviceList extends React.Component<IProp, IState> {
             dataIndex: 'deviceSubShelf',
             width: 100,
             ellipsis: true,
+        }, {
+            title: '二维码',
+            dataIndex: 'gunQrCode',
+            width: 100,
+            ellipsis: true,
+            render: (value: any, record: any, index: any) => {
+                const {currentSubRow} = this.state;
+                const query: any = {
+                    stationCode: currentSubRow.stationCode,
+                    deviceCode: currentSubRow.deviceCode,
+                    deviceCtrlCode: currentSubRow.deviceCtrlCode,
+                    deviceCanIndex: record.deviceCanIndex
+                };
+                const url = StationService.getQrCode(query);
+                return <Images imgList={[url]}/>;
+            }
         },
     ];
     //缓存实时状态
@@ -225,12 +244,18 @@ class DeviceList extends React.Component<IProp, IState> {
                 scroll={{x: 100, scrollToFirstRowOnChange: true}}
                 columns={this.columns}
                 loading={this.state.tableLoading}
-                expandedRowRender={record => (
-                    <Table columns={this.columnsSub}
-                           dataSource={record.children}
-                           rowKey={(record1: any, index1: any) => index1}
-                    />
-                )}
+                onExpand={(expanded: boolean, record: any) => {
+                    this.setState({currentSubRow: record});
+                }}
+                expandedRowRender={record => {
+                    return (
+                        <Table columns={this.columnsSub}
+                               dataSource={record.children}
+                               pagination={false}
+                               rowKey={(record1: any, index1: any) => index1}
+                        />
+                    )
+                }}
                 childrenColumnName={'peace'}
                 style={{paddingTop: 8}}
                 dataSource={this.state.dataList}

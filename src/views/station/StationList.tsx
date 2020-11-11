@@ -4,6 +4,7 @@ import {Button, Col, Input, Modal, PageHeader, Pagination, Row, Table} from "ant
 import {StationService} from "@views/station/station.service";
 import CtrlList from "@views/station/CtrlList";
 import {IStationDetail} from "@views/station/station";
+import Images from "@components/common/Images";
 
 interface IState {
     dataList: IStationDetail[];
@@ -43,6 +44,9 @@ class StationList extends React.Component<any, IState> {
             dataIndex: 'attachStr',
             width: 100,
             ellipsis: true,
+            render: (value: any, record: any, index: any) => {
+                return <Images imgList={value.split(";")}/>;
+            }
         }, {
             title: '商户名称',
             dataIndex: 'shopName',
