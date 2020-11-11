@@ -1,5 +1,5 @@
 import React from "react";
-import {IChargingOrderQuery, IChargingOrderTotalDetail, IPageQuery, IStationDetail} from "@views/order/order";
+import {IChargingOrderQuery, IChargingOrderTotalDetail, IPageQuery} from "@views/order/order";
 import {Button, Col, DatePicker, Divider, Input, PageHeader, Pagination, Row, Select, Table} from "antd";
 import {OrderService} from "@views/order/order.service";
 import locale from 'antd/es/date-picker/locale/zh_CN';
@@ -7,6 +7,8 @@ import moment from "moment";
 import {IUserDetail} from "@root/typings/server";
 import {sessionStore} from "@scripts/utils";
 import {url, userCacheAccountKey} from "@root/src/config/config.constant";
+import {IStationDetail} from "@views/station/station";
+import {StationService} from "@views/station/station.service";
 
 const {Option} = Select;
 
@@ -160,7 +162,7 @@ class ConsumeOrderList extends React.Component<any, IState> {
     }
 
     loadStationListToLocal() {
-        OrderService.getChargingStationList().then(value => {
+        StationService.getChargingStationList().then(value => {
             this.setState({stationList: value});
         });
     }

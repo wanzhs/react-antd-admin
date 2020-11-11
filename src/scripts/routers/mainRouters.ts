@@ -14,17 +14,23 @@ export default [
     //   component: 'message/Inbox',
     //   models: ['inbox']
     // },
+    // {
+    //     path: '/order-count',
+    //     component: 'order/OrderCount',
+    //     icon: 'heat-map',
+    //     title: '订单统计'
+    // },
     {
-        path: '/order-count',
-        component: 'order/OrderCount',
-        icon: 'heat-map',
-        title: '订单统计'
-    },
-    {
-        path: '/member-manage',
-        component: 'member/member-list',
+        path: '/station',
         icon: 'solution',
-        title: '会员管理'
+        title: '场站管理',
+        routes:[
+            {
+                path: '/station/list',
+                component: 'station/StationList',
+                title: '场站列表'
+            },
+        ]
     },
     {
         path: '/order',
@@ -35,16 +41,17 @@ export default [
                 path: '/order/chargingOrder',
                 component: 'order/ConsumeOrderList',
                 title: '充电订单'
-            }, {
-                path: '/order/chargingPay',
-                component: 'order/PayOrderList',
-                title: '充值订单'
             },
-            {
-                path: '/order/refundOrder',
-                component: 'order/RefundOrderList',
-                title: '退款记录'
-            },
+            // {
+            //     path: '/order/chargingPay',
+            //     component: 'order/PayOrderList',
+            //     title: '充值订单'
+            // },
+            // {
+            //     path: '/order/refundOrder',
+            //     component: 'order/RefundOrderList',
+            //     title: '退款记录'
+            // },
         ]
     },
     {
