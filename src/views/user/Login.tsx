@@ -1,5 +1,4 @@
 import React, {useCallback, useState} from 'react'
-import {Link} from 'react-router-dom'
 import {Button, Form, Icon, Input, message} from 'antd'
 import {connect} from 'dva'
 import {DispatchProp} from 'react-redux'
@@ -8,7 +7,7 @@ import {FormComponentProps} from 'antd/lib/form/Form'
 
 import styles from '@styles/sass/page/login.module.scss'
 
-import {HOME, REGISTER} from '@scripts/routers'
+import {HOME} from '@scripts/routers'
 import {goLoginAccount} from '@scripts/servers'
 
 import {useStatusDisabled} from '@components/hooks'
@@ -68,7 +67,7 @@ const Login: React.SFC<FormComponentProps & DispatchProp> = ({
             <Form className="form-wrapper" onSubmit={handleSubmit}>
                 <FormItem>
                     {getFieldDecorator('userName', {
-                        initialValue: 'gapsdadmin',
+                        initialValue: '',
                         rules: [
                             {
                                 required: true,
@@ -91,7 +90,7 @@ const Login: React.SFC<FormComponentProps & DispatchProp> = ({
                 </FormItem>
                 <FormItem>
                     {getFieldDecorator('password', {
-                        initialValue: 'cdz123',
+                        initialValue: '',
                         rules: [
                             {
                                 required: true,
@@ -127,14 +126,12 @@ const Login: React.SFC<FormComponentProps & DispatchProp> = ({
                     className="color-default-gray"
                     layout-align="space-between center"
                 >
-                    <span>账号：随意</span>
-                    <span>密码：随意</span>
                 </p>
-                <FormItem>
-                    <h4 layout-align="end center">
-                        <Link to={REGISTER}>创建账户</Link>
-                    </h4>
-                </FormItem>
+                {/*<FormItem>*/}
+                {/*    <h4 layout-align="end center">*/}
+                {/*        <Link to={REGISTER}>创建账户</Link>*/}
+                {/*    </h4>*/}
+                {/*</FormItem>*/}
             </Form>
         </div>
     )
