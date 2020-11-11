@@ -194,7 +194,22 @@ const responseData = (option = {}) => {
 const findItemIndex = (data = [], value, key = 'id') =>
     data.findIndex(v => Object.is(isObject(v) ? v[key] : v, value))
 
-module.exports = {
+// module.exports = {
+//     isVaildAddress,
+//     numToThousands,
+//     randomRange,
+//     checkDate,
+//     getFixedNumMonth,
+//     sortAndFilterDate,
+//     toDataGoPagination,
+//     addFromNow,
+//     begetDateTime,
+//     createImage,
+//     responseData,
+//     findItemIndex
+// }
+
+export default {
     isVaildAddress,
     numToThousands,
     randomRange,
@@ -207,4 +222,4 @@ module.exports = {
     createImage,
     responseData,
     findItemIndex
-}
+};

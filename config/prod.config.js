@@ -17,7 +17,7 @@ window.g_config = (function() {
     name: '管理系统',
     enName: 'react-antd-admin',
     logo: ''.concat(publicPath, 'static/logo.svg'),
-    apiRoot: 'http://localhost:9999/',
+    apiRoot: 'https://pay.bgy.gacarb.com/admin/',
     // apiRoot: 'https://api.lhh.now.sh/',
     themes: themes,
     defaultTheme: 'dark',
