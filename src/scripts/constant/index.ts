@@ -9,7 +9,7 @@ export const RANGE_DATE = 'RANGE_DATE'
 export const SKELETON_DEFAULT_COLOR = '#E0E0E0'
 export const DEFAULT_THEME = themeFields.includes(defaultTheme)
   ? defaultTheme
-  : 'purple'
+  : 'dark'
 export const DARK_THEME = 'dark'
 export const DEFAULT_CODE_THEME = 'xonokai'
 

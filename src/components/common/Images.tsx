@@ -20,6 +20,7 @@ class Images extends React.Component<IProp, IState> {
             <div>
                 <img onClick={() => {
                     this.setState({visible: true})
+                    return true;
                 }}
                      alt="附件图片"
                      style={this.props.width ? {width: `${this.props.width}`} : {width: 50}}
@@ -31,7 +32,6 @@ class Images extends React.Component<IProp, IState> {
                        footer={false}>
                     <Carousel autoplay={true} dots={true}>
                         {this.props.imgList.map(item => {
-                            console.log(item)
                             return <img width={'100%'} src={item} key={item}/>;
                         })}
                     </Carousel>

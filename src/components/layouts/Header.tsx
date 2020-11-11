@@ -18,7 +18,7 @@ import {clearLoginInfo} from '@root/src/scripts/utils'
 const {Header} = Layout
 const {ItemGroup} = Menu
 const {header, btn_like, popover_menu} = styles
-const {enName, publicPath} = window.g_config
+const {publicPath} = window.g_config
 
 const UserCenterMenu: React.FC<IUserInfo & {
     onSelect?: (param: SelectParam) => void
@@ -137,14 +137,6 @@ const AppHeader: React.FC<TAppHeaderProps> = ({
                         </div>
                     )}
                     <div layout-align="start center">
-                        <a
-                            title={enName}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            href="https://github.com/liuguanhua/react-antd-admin"
-                        >
-                            <Icon type="github"/>
-                        </a>
                         <span className="header-icon-operate mgl">
               <ThemeWrapper/>
             </span>

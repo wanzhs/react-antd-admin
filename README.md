@@ -1,23 +1,5 @@
 # <h1 align="center">react-antd-admin</h1>
 
-<p align="center">
-  <a href="https://github.com/nodejs/node" target="_blank">
-    <img alt="Node Version" src="https://img.shields.io/badge/node-12.14.0-brightgreen" />
-  </a>
-  <a href="https://github.com/facebook/react" target="_blank">
-    <img alt="React Version" src="https://img.shields.io/badge/react-16.8.6-brightgreen" />
-  </a>
-   <a href="https://github.com/microsoft/TypeScript" target="_blank">
-    <img alt="TypeScript Version" src="https://img.shields.io/badge/typescript-3.7.2-brightgreen" />
-  </a>
- <a href="https://github.com/ant-design/ant-design" target="_blank">
-    <img alt="Antd Version" src="https://img.shields.io/badge/antd-3.25.1-brightgreen" />
-  </a>
-  <a href="https://github.com/liuguanhua/react-antd-admin/releases" target="_blank">
-     <img alt="React-Antd-Admin Version" src="https://img.shields.io/badge/releases-1.0.0-blue.svg?cacheSeconds=2592000" />
-  </a>
-</p>
-
 ## 📖 介绍
 
 基于工作中开发需要，设计了一个后台前端管理系统，节省从零开始搭建的时间，前端基于[react](https://github.com/facebook/react)（拥抱 hooks）、[typescript](https://github.com/microsoft/TypeScript)、[antd](https://github.com/ant-design/ant-design)、[dva](https://github.com/dvajs/dva)及一些特别优秀的开源库实现，特别感谢。
