@@ -4,11 +4,9 @@ import {Button, Col, DatePicker, Divider, Input, PageHeader, Pagination, Row, Se
 import {OrderService} from "@views/order/order.service";
 import locale from 'antd/es/date-picker/locale/zh_CN';
 import moment from "moment";
-import {IUserDetail} from "@root/typings/server";
-import {sessionStore} from "@scripts/utils";
-import {url, userCacheAccountKey} from "@root/src/config/config.constant";
 import {IStationDetail} from "@views/station/station";
 import {StationService} from "@views/station/station.service";
+import {AxiosResponse} from "@node_modules/axios";
 
 const {Option} = Select;
 
@@ -176,13 +174,18 @@ class ConsumeOrderList extends React.Component<any, IState> {
         if (rsQuery.chargingEndDt) {
             rsQuery.chargingEndDt = moment(rsQuery.chargingEndDt).format('YYYY-MM-DD HH:mm:ss')
         }
-        const userDetail: IUserDetail = sessionStore.get(userCacheAccountKey);
-        if (userDetail) {
-            rsQuery.shopLogin = userDetail.loginName;
-            rsQuery.shopToken = userDetail.userToken;
-            let urlParams: string = this.joinParams(rsQuery);
-            window.open(url + '/charging/order/charging/excel?' + urlParams);
-        }
+        OrderService.downloadConsumeOrder(rsQuery).then((value: AxiosResponse) => {
+            let fileName: string = "充电订单.xlsx";
+            console.log(value.headers)
+            let blob = new Blob([value.data], {type: 'application/octet-stream'});
+            let blobUrl = URL.createObjectURL(blob);
+            let eLink = document.createElement("a");
+            eLink.download = fileName;
+            eLink.href = blobUrl;
+            eLink.click();
+            eLink.remove();
+            URL.revokeObjectURL(blobUrl);
+        })
     }
 
     joinParams(param: object) {

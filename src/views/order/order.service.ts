@@ -10,7 +10,11 @@ export class OrderService {
         return RequestCarrier.post_json('charging/order/total', query);
     };
 
-    public static getPayOrderList=(query:IPageQuery)=>{
+    public static getPayOrderList = (query: IPageQuery) => {
         return RequestCarrier.post_json('charging/money/get/page', query);
+    };
+
+    public static downloadConsumeOrder = (query: any) => {
+        return RequestCarrier.post_json_file_response('charging/order/charging/excel', query);
     }
 }
