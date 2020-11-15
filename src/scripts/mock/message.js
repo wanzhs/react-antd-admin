@@ -1,6 +1,7 @@
 import api from "@scripts/common/api";
 import {url} from "@root/src/config/config.constant";
-import {addFromNow, begetDateTime, createImage, sortAndFilterDate, toDataGoPagination} from "@scripts/mock/utils";
+
+const {addFromNow, begetDateTime, createImage, sortAndFilterDate, toDataGoPagination} = require("@scripts/mock/utils");
 
 const {Random, mock} = require('mockjs');
 const {capitalize, natural} = Random;
